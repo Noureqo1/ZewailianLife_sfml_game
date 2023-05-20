@@ -255,7 +255,7 @@ void menu::initVariables()
 
 	mainmenu[2].setFont(font);
 	mainmenu[2].setFillColor(Color::White);
-	mainmenu[2].setString("controlss");
+	mainmenu[2].setString("controles");
 	mainmenu[2].setCharacterSize(90);
 	mainmenu[2].setPosition(Vector2f(400, 640 / (10) + 200));
 
