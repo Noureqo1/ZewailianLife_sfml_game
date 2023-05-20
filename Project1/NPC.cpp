@@ -27,12 +27,10 @@ void NPC::initSprites()
 
 NPC::NPC()
 {
+	I = false;
 	this->initTeaxture();
 	this->initSprites();
 }
-
-
-
 
 
 void NPC::render(sf::RenderTarget& target)
@@ -42,10 +40,20 @@ void NPC::render(sf::RenderTarget& target)
 
 void NPC::initchat(sf::Sprite sprite, sf::RenderTarget& target)
 {
-	if (npc1.getPosition().x - sprite.getPosition().x < 50 && npc1.getPosition().x - sprite.getPosition().x > -50 && sf::Keyboard::isKeyPressed(sf::Keyboard::I))
+	Iispressed();
+
+	if (npc1.getPosition().x - sprite.getPosition().x < 50 && npc1.getPosition().x - sprite.getPosition().x > -50 && I )
 	{
 		target.draw(gui);
 	}
 
 
+}
+
+void NPC::Iispressed()
+{
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::I))
+	{
+		I = true;
+	}
 }

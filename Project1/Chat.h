@@ -15,6 +15,6 @@ public:
 
 	Chat();
 
-	void displaychat(sf::RenderWindow &window);
+	void displaychat(sf::RenderWindow & window);
 };
 

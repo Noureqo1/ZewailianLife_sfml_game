@@ -7,7 +7,7 @@ private:
 
 	sf::Sprite npc1 , gui;
 	sf::Texture npc1Texture, guiTexture;
-
+	bool I;
 
 	void initTeaxture();
 	void initSprites();
@@ -18,5 +18,6 @@ public:
 
 	void render(sf::RenderTarget& target);
 	void initchat(sf::Sprite sprite , sf::RenderTarget& target);
+	void Iispressed();
 };
 
