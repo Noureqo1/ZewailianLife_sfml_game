@@ -143,6 +143,7 @@
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="sound.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chat.h" />
@@ -154,6 +155,7 @@
     <ClInclude Include="menu.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="sound.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

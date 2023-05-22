@@ -169,8 +169,6 @@ void Game::render()
 {
 	this->window->clear();
 
-
-
 	//Render stuff
 	menu.drawBackground(*window);
 

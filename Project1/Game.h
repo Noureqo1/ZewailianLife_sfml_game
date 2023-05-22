@@ -14,6 +14,7 @@
 #include "NPC.h"
 #include"Chat.h"
 #include"indoorsMap.h"
+#include "sound.h"
 #include"items.h"
 #include <string>
 
@@ -51,6 +52,8 @@ private:
 	items item;
 
 	indoorsMap indoor;
+
+	sound sound;
 
 	void initVariables();
 	void initWindow();
