@@ -4,8 +4,8 @@ class NPC
 {
 private:
 
-	sf::Sprite npc1 , gui;
-	sf::Texture npc1Texture, guiTexture;
+	sf::Sprite npc1, npc2, npc3, npc4, gui, gui2,gui3,gui4;
+	sf::Texture npc1Texture, npc2Texture, npc3Texture, npc4Texture, guiTexture, gui2Texture, gui3Texture, gui4Texture;
 	bool I;
 
 
