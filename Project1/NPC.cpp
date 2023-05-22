@@ -86,7 +86,7 @@ void NPC::initchat(sf::Sprite sprite, sf::RenderTarget& target)
 {
 	Iispressed();
 
-	if (npc1.getPosition().x - sprite.getPosition().x < 50 && npc1.getPosition().x - sprite.getPosition().x > -50 && I )
+	if (npc1.getPosition().x - sprite.getPosition().x < 150 && npc1.getPosition().x - sprite.getPosition().x > -150 && I )
 	{
 		target.draw(gui);
 	}

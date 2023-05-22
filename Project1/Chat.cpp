@@ -101,7 +101,7 @@ void Chat::GatenpcResponse1(RenderWindow& window)
 		{
 			window.draw(GatenpcresponseText[i]);
 
-			if (Keyboard::isKeyPressed(Keyboard::N))
+			if (Keyboard::isKeyPressed(Keyboard::E))
 			{
 				gatechatIsover = true;
 			}
