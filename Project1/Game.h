@@ -12,9 +12,6 @@
 #include "CutSene.h"
 #include "menu.h"
 #include "NPC.h"
-#include "items.h"
-#include "indoorsMap.h"
-#include"Chat.h"
 #include <string>
 
 
@@ -50,12 +47,6 @@ private:
 
 	NPC npc;
 
-	indoorsMap indoor;
-
-	
-
-	float aspectratio;
-
 	void initVariables();
 	void initWindow();
 
@@ -87,7 +78,4 @@ public:
 
 	void render();
 
-	void setbage();
-
-	void initchat();
 };

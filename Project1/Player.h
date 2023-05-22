@@ -2,8 +2,6 @@
 #include"Game.h"
 #include "Menu.h"
 
-
-
 class Player
 {
 private:
