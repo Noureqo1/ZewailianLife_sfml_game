@@ -12,6 +12,9 @@
 #include "CutSene.h"
 #include "menu.h"
 #include "NPC.h"
+#include "items.h"
+#include "indoorsMap.h"
+#include"Chat.h"
 #include <string>
 
 
@@ -30,6 +33,10 @@ private:
 	sf::RenderWindow* window;
 	sf::Event sfmlEvent;
 	sf::Vector2i mousepos;
+	
+	Chat chat;
+
+	items item;
 
 	string name;
 
@@ -42,6 +49,12 @@ private:
 	menu menu;
 
 	NPC npc;
+
+	indoorsMap indoor;
+
+	
+
+	float aspectratio;
 
 	void initVariables();
 	void initWindow();
@@ -74,4 +87,7 @@ public:
 
 	void render();
 
+	void setbage();
+
+	void initchat();
 };

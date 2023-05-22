@@ -63,6 +63,7 @@ public:
 	void UpdateAnimation();
 
 	int getPage();
+	void setPagenum(int num);
 	void initVariables();
 	void setDelay();
 	void updateMenu();

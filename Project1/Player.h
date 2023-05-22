@@ -47,6 +47,8 @@ public:
 	void update(const sf::RenderTarget* target);
 	void render(sf::RenderTarget& target);
 	void UpdateAnimation(sf::Sprite& sprite);
+	void setboyposition(sf::Vector2f pos);
+	void setgirlposition(sf::Vector2f pos);
 	sf::Vector2f getBoyPosition();
 	sf::Vector2f getgirlPosition();
 };

@@ -1,13 +1,11 @@
 #include"Game.h"
 
 
-
 void Game::initVariables()
 {
 	this->view = sf::View(sf::FloatRect(0, 0, 530, 420));
 	view.setViewport(sf::FloatRect(0, 0, 1.0f, 1.0f));
 	view.setCenter(215, 160);
-
 }
 
 void Game::initWindow()
@@ -22,11 +20,8 @@ void Game::initWindow()
 //Constructors and Destructors
 Game::Game()
 {
-
 	this->initVariables();
-
 	this->initWindow();
-
 }
 
 Game::~Game()
@@ -106,8 +101,9 @@ void Game::updatePlayer()
 
 void Game::update()
 {
-
 	this->pollEvents();
+
+	this->setbage();
 	
 	menu.updateMenu();
 
@@ -130,14 +126,24 @@ void Game::update()
 			initview(*this->window);
 		}
 
-		
+		map.updateBackgrowndBoundsCollision(player.boyCharcter);
+		map.updateBackgrowndBoundsCollision(player.girlCharacter);
 		
 		intro.updateInput();
 
 		this->updatePlayer();
 		
 	}
-
+	if (menu.getPage() == 6)
+	{
+		initview(*this->window);
+		this->updatePlayer();
+	}
+	if (menu.getPage() == 7)
+	{
+		initview(*this->window);
+		this->updatePlayer();
+	}
 }
 
 void Game::renderPlayer()
@@ -177,17 +183,73 @@ void Game::render()
 
 		this->renderPlayer();
 
-		this->npc.render(*this->window);
+		item.renderItems(player.boyCharcter, *window);
 
-		npc.initchat(player.boyCharcter, *window);
+
+		
+		this->initchat();
 
 		this->intro.render(*this->window);
 	}
 
+	if (menu.getPage() == 6)
+	{
+		map.renderoutdoors(*this->window);
 
+		this->renderPlayer();
+	}
+
+	if (menu.getPage() == 7)
+	{
+		
+
+		indoor.render(*this->window);
+
+		this->renderPlayer();
+		
+		npc.rendernpc(*this->window);
+	}
 	
 
 	this->window->display();
+}
+
+void Game::setbage()
+{
+	if (map.gateposition(player.boyCharcter) && menu.getPage() == 5  || map.gateposition(player.girlCharacter) && menu.getPage() == 5)
+	{
+		player.setboyposition(Vector2f(400, 640));
+
+		menu.setPagenum(6);
+	}
+
+	if (map.enteranceposition(player.boyCharcter) && menu.getPage() == 6 && Keyboard::isKeyPressed(Keyboard::Enter) 
+		|| map.enteranceposition(player.girlCharacter) && menu.getPage() == 6 && menu.getPage() == 6 && Keyboard::isKeyPressed(Keyboard::Enter))
+	{
+		player.setboyposition(Vector2f(400, 640));
+		menu.setPagenum(7);
+	}
+
+}
+
+void Game::initchat()
+{
+	this->npc.render(*this->window);
+
+	if (!chat.getechatisOver())
+	{
+		npc.initchat(player.boyCharcter, *window);
+	}
+
+	if (npc.getI())
+	{
+		this->chat.GatenpcChat(*window);
+
+		if (chat.FisPressed())
+		{
+			this->chat.GatenpcResponse1(*window);
+		}
+	}
 }
 
 void Game::updateDt()
@@ -224,9 +286,4 @@ void Game::menuState()
 	{
 		menu.controls(*this->window);
 	}
-	if (menu.getPage() == 4)
-	{
-		
-	}
-	
 }

@@ -67,6 +67,16 @@ void Player::UpdateAnimation(sf::Sprite& sprite)
 	}
 }
 
+void Player::setboyposition(sf::Vector2f pos)
+{
+	boyCharcter.setPosition(pos);
+}
+
+void Player::setgirlposition(sf::Vector2f pos)
+{
+	girlCharacter.setPosition(pos);
+}
+
 sf::Vector2f Player::getBoyPosition()
 {
 	return boyCharcter.getPosition();
@@ -189,7 +199,6 @@ void Player::updatePlayer(sf::Sprite& sprite,const sf::RenderTarget* target)
 	this->UpdateAnimation(sprite);
 
 	//Window bounds collision
-	map.updateBackgrowndBoundsCollision(sprite);
 
 	this->updateWindowBoundsCollision(sprite ,target);
 }

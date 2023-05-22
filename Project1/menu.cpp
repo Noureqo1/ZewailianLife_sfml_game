@@ -133,7 +133,6 @@ void menu::characterSelctionPage()
 		SelectCharacterText.setCharacterSize(70);
 		SelectCharacterText.setPosition(10, 100);
 		SelectCharacterText.setFillColor(Color::Green);
-
 		
 		
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && girlCharacter.getGlobalBounds().contains(mouseposition))
@@ -222,6 +221,11 @@ int menu::getPage()
 	return this->page;
 }
 
+void menu::setPagenum(int num)
+{
+	page = num;
+}
+
 void menu::initVariables()
 {
 	delay = sf::seconds(0.3f);
@@ -245,25 +249,25 @@ void menu::initVariables()
 	mainmenu[0].setFillColor(Color::Yellow);
 	mainmenu[0].setString("play");
 	mainmenu[0].setCharacterSize(90);
-	mainmenu[0].setPosition(Vector2f(400, 640 / (10)));
+	mainmenu[0].setPosition(Vector2f(300, 640 / (10)));
 
 	mainmenu[1].setFont(font);
 	mainmenu[1].setFillColor(Color::White);
 	mainmenu[1].setString("volume");
 	mainmenu[1].setCharacterSize(90);
-	mainmenu[1].setPosition(Vector2f(400, 640 / (10) + 100));
+	mainmenu[1].setPosition(Vector2f(300, 640 / (10) + 100));
 
 	mainmenu[2].setFont(font);
 	mainmenu[2].setFillColor(Color::White);
-	mainmenu[2].setString("controlsss");
+	mainmenu[2].setString("controls");
 	mainmenu[2].setCharacterSize(90);
-	mainmenu[2].setPosition(Vector2f(400, 640 / (10) + 200));
+	mainmenu[2].setPosition(Vector2f(300, 640 / (10) + 200));
 
 	mainmenu[3].setFont(font);
 	mainmenu[3].setFillColor(Color::White);
 	mainmenu[3].setString("exit");
 	mainmenu[3].setCharacterSize(90);
-	mainmenu[3].setPosition(Vector2f(400, 640 / (10) + 300));
+	mainmenu[3].setPosition(Vector2f(300, 640 / (10) + 300));
 	
 }
 
@@ -309,6 +313,7 @@ void menu::playername(RenderWindow& window, string& name)
 	NameText.setPosition(10, 100);
 	HeadText.setFillColor(Color::Green);
 	NameText.setFillColor(Color::White);
+
 	while (window.isOpen()) {
 		Event event;
 		while (window.pollEvent(event)) {
@@ -421,6 +426,7 @@ void menu::controls(RenderWindow& window)
 			}
 
 		}
+
 		window.clear();
 
 		
