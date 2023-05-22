@@ -217,8 +217,12 @@ void Game::render()
 
 		this->renderPlayer();
 
+		this->npc.render(*this->window);
+
 		npc.rendernpc(*this->window);
 	}
+
+
 		this->window->display();
 	
 }

@@ -24,6 +24,18 @@ void NPC::initTeaxture()
 	{
 		std::cout << "ERROR::NPC::INITTEXTURE::Could not load texture file." << "\n";
 	}
+	if (!this->gui2Texture.loadFromFile("assets/GUI/GUI2.png"))
+	{
+		std::cout << "ERROR::NPC::INITTEXTURE::Could not load texture file." << "\n";
+	}
+	if (!this->gui3Texture.loadFromFile("assets/GUI/GUI3.png"))
+	{
+		std::cout << "ERROR::NPC::INITTEXTURE::Could not load texture file." << "\n";
+	}
+	if (!this->gui4Texture.loadFromFile("assets/GUI/GUI4.png"))
+	{
+		std::cout << "ERROR::NPC::INITTEXTURE::Could not load texture file." << "\n";
+	}
 
 }
 
@@ -52,6 +64,19 @@ void NPC::initSprites()
 	this->gui.setTexture(this->guiTexture);
 	this->gui.setPosition(npc1.getPosition().x, npc1.getPosition().y + 50);
 	this->gui.setScale(3, 3);
+
+	this->gui2.setTexture(this->gui2Texture);
+	this->gui.setPosition(npc1.getPosition().x, npc1.getPosition().y + 50);
+	this->gui.setScale(3, 3);
+
+	this->gui3.setTexture(this->gui3Texture);
+	this->gui.setPosition(npc1.getPosition().x, npc1.getPosition().y + 50);
+	this->gui.setScale(3, 3);
+
+	this->gui4.setTexture(this->gui4Texture);
+	this->gui.setPosition(npc1.getPosition().x, npc1.getPosition().y + 50);
+	this->gui.setScale(3, 3);
+
 
 }
 
@@ -89,6 +114,21 @@ void NPC::initchat(sf::Sprite sprite, sf::RenderTarget& target)
 	if (npc1.getPosition().x - sprite.getPosition().x < 150 && npc1.getPosition().x - sprite.getPosition().x > -150 && I )
 	{
 		target.draw(gui);
+	}
+
+	if (npc2.getPosition().x - sprite.getPosition().x < 150 && npc2.getPosition().x - sprite.getPosition().x > -150 && I)
+	{
+		target.draw(gui2);
+	}
+
+	if (npc3.getPosition().x - sprite.getPosition().x < 150 && npc3.getPosition().x - sprite.getPosition().x > -150 && I)
+	{
+		target.draw(gui3);
+	}
+
+	if (npc4.getPosition().x - sprite.getPosition().x < 150 && npc4.getPosition().x - sprite.getPosition().x > -150 && I)
+	{
+		target.draw(gui4);
 	}
 
 
