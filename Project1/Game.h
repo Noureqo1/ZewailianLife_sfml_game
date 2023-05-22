@@ -77,7 +77,4 @@ public:
 
 	void render();
 
-
-	
-
 };

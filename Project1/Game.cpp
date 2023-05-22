@@ -182,19 +182,10 @@ void Game::render()
 
 		npc.initchat(player.boyCharcter, *window);
 
-		if (npc.getI()) 
-		{
-			this->chat.GatenpcChat(*window);
-
-			if (chat.FisPressed()) 
-			{
-				this->chat.GatenpcResponse1(*window);
-			}
-		}
+		this->chat.DrdoaaChat(*window);
 
 		this->intro.render(*this->window);
 	}
-
 
 	this->window->display();
 }
