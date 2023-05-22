@@ -13,6 +13,8 @@
 #include "menu.h"
 #include "NPC.h"
 #include"Chat.h"
+#include"indoorsMap.h"
+#include"items.h"
 #include <string>
 
 
@@ -21,7 +23,7 @@ class Game
 private:
 
 	sf::View view;
-	
+
 	sf::Clock dtClock;
 	float dt;
 
@@ -46,6 +48,10 @@ private:
 
 	Chat chat;
 
+	items item;
+
+	indoorsMap indoor;
+
 	void initVariables();
 	void initWindow();
 
@@ -63,6 +69,8 @@ public:
 	void pollEvents();
 	void initview(sf::RenderTarget& window);
 
+	void initchat();
+
 	void updateView();
 
 	void updatePlayer();
@@ -70,6 +78,8 @@ public:
 	void renderPlayer();
 
 	void updateDt();
+
+	void setbage();
 
 	void menuState();
 

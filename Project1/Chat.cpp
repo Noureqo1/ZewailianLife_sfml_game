@@ -32,7 +32,7 @@ void Chat::moveup()
 	if (selected - 1 >= -1) {
 		drDoaaText[selected].setFillColor(Color::White);
 		selected--;
-		if (selected == 0) 
+		if (selected == 0)
 		{
 			selected = 3;
 		}
@@ -69,13 +69,13 @@ void Chat::GatenpcChat(RenderWindow& window)
 	this->gatenpcText[1].setFillColor(Color::Yellow);
 	this->gatenpcText[1].setString("how can i get inside");
 	this->gatenpcText[1].setCharacterSize(6);
-	this->gatenpcText[1].setPosition(Vector2f(295,540));
-	
+	this->gatenpcText[1].setPosition(Vector2f(295, 540));
+
 	FisPressed();
 
 	for (int i = 0; i < 2; i++) {
-		if(!f)
-		window.draw(gatenpcText[i]);
+		if (!f)
+			window.draw(gatenpcText[i]);
 
 	}
 }
@@ -101,12 +101,12 @@ void Chat::GatenpcResponse1(RenderWindow& window)
 		{
 			window.draw(GatenpcresponseText[i]);
 
-			if (Keyboard::isKeyPressed(Keyboard::N))
+			if (Keyboard::isKeyPressed(Keyboard::E))
 			{
 				gatechatIsover = true;
 			}
 		}
-		
+
 	}
 
 }
@@ -123,45 +123,21 @@ void Chat::DrdoaaChat(RenderWindow& window)
 	this->drDoaaText[1].setFont(font);
 	this->drDoaaText[1].setFillColor(Color::Yellow);
 	this->drDoaaText[1].setString("i wanted to do my assignment");
-	this->drDoaaText[1].setCharacterSize(6);
-	this->drDoaaText[1].setPosition(Vector2f(293,520));
+	this->drDoaaText[1].setCharacterSize(30);
+	this->drDoaaText[1].setPosition(Vector2f(400, 640 / (10)));
 
 	this->drDoaaText[2].setFont(font);
 	this->drDoaaText[2].setFillColor(Color::White);
 	this->drDoaaText[2].setString("i wanted to do my quiz");
-	this->drDoaaText[2].setCharacterSize(6);
-	this->drDoaaText[2].setPosition(Vector2f(293,540));
+	this->drDoaaText[2].setCharacterSize(30);
+	this->drDoaaText[2].setPosition(Vector2f(400, 640 / (10)));
 
 	this->drDoaaText[3].setFont(font);
 	this->drDoaaText[3].setFillColor(Color::White);
 	this->drDoaaText[3].setString("nothing i will come back another time");
-	this->drDoaaText[3].setCharacterSize(6);
-	this->drDoaaText[3].setPosition(Vector2f(293,560));
+	this->drDoaaText[3].setCharacterSize(30);
+	this->drDoaaText[3].setPosition(Vector2f(400, 640 / (10)));
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-	{
-		moveup();
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-	{
-		movedown();
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
-	{
-		if (pressed() == 1)
-		{
-			DrdoaaResponse1(window);
-		}
-		else if (pressed() == 2)
-		{
-			DrdoaaResponse2(window);
-		}
-		else if (pressed() == 3)
-		{
-
-			
-		}
-	}
 	for (int i = 0; i < 4; i++) {
 		window.draw(drDoaaText[i]);
 	}
@@ -229,32 +205,7 @@ void Chat::DrwalidChat(RenderWindow& window)
 	this->drwalidText[3].setCharacterSize(6);
 	this->drwalidText[3].setPosition(Vector2f(400, 640 / (10)));
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-	{
-		moveup();
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-	{
-		movedown();
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
-	{
-
-		if (pressed() == 1)
-		{
-			DrdoaaResponse1(window);
-		}
-		else if (pressed() == 2)
-		{
-			DrdoaaResponse2(window);
-		}
-		else if (pressed() == 3)
-		{
-
-		}
-	}
-	for (int i = 0; i < 4; i++) 
-	{
+	for (int i = 0; i < 4; i++) {
 		window.draw(drwalidText[i]);
 	}
 }
@@ -317,7 +268,7 @@ void Chat::AcademicNpcChat(RenderWindow& window)
 }
 
 
-void Chat::AcademicNpcResponse1(RenderWindow&window)
+void Chat::AcademicNpcResponse1(RenderWindow& window)
 {
 	this->AcademicNpcResponse1Text[0].setFont(font);
 	this->AcademicNpcResponse1Text[0].setFillColor(Color::White);
@@ -328,7 +279,7 @@ void Chat::AcademicNpcResponse1(RenderWindow&window)
 }
 
 
-void Chat::AcademicNpcResponse2(RenderWindow&window)
+void Chat::AcademicNpcResponse2(RenderWindow& window)
 {
 	this->AcademicNpcResponse2Text[0].setFont(font);
 	this->AcademicNpcResponse2Text[0].setFillColor(Color::White);
@@ -345,8 +296,12 @@ bool Chat::FisPressed()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
 	{
 		f = true;
-		times+=1;
+		times += 1;
 	}
 	return f;
 }
 
+bool Chat::getechatisOver()
+{
+	return gatechatIsover;
+}

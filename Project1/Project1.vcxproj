@@ -136,6 +136,8 @@
     <ClCompile Include="Chat.cpp" />
     <ClCompile Include="CutSene.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="indoorsMap.cpp" />
+    <ClCompile Include="items.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="menu.cpp" />
@@ -146,7 +148,8 @@
     <ClInclude Include="Chat.h" />
     <ClInclude Include="CutSene.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="Head.h" />
+    <ClInclude Include="indoorsMap.h" />
+    <ClInclude Include="items.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="NPC.h" />

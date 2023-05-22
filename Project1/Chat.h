@@ -1,3 +1,4 @@
+
 #pragma once
 #include"Game.h"
 
@@ -68,5 +69,6 @@ public:
 	void AcademicNpcResponse2(RenderWindow& window);
 
 	bool FisPressed();
-};
 
+	bool getechatisOver();
+};
