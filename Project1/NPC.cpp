@@ -66,16 +66,16 @@ void NPC::initSprites()
 	this->gui.setScale(3, 3);
 
 	this->gui2.setTexture(this->gui2Texture);
-	this->gui.setPosition(npc1.getPosition().x, npc1.getPosition().y + 50);
-	this->gui.setScale(3, 3);
+	this->gui2.setPosition(npc2.getPosition().x, npc2.getPosition().y + 50);
+	this->gui2.setScale(3, 3);
 
 	this->gui3.setTexture(this->gui3Texture);
-	this->gui.setPosition(npc1.getPosition().x, npc1.getPosition().y + 50);
-	this->gui.setScale(3, 3);
+	this->gui3.setPosition(npc3.getPosition().x, npc3.getPosition().y + 50);
+	this->gui3.setScale(3, 3);
 
 	this->gui4.setTexture(this->gui4Texture);
-	this->gui.setPosition(npc1.getPosition().x, npc1.getPosition().y + 50);
-	this->gui.setScale(3, 3);
+	this->gui4.setPosition(npc4.getPosition().x, npc4.getPosition().y + 50);
+	this->gui4.setScale(3, 3);
 
 
 }
@@ -115,6 +115,11 @@ void NPC::initchat(sf::Sprite sprite, sf::RenderTarget& target)
 	{
 		target.draw(gui);
 	}
+}
+
+void NPC::initIndooorschat(sf::Sprite sprite, sf::RenderTarget& target)
+{
+	Iispressed();
 
 	if (npc2.getPosition().x - sprite.getPosition().x < 150 && npc2.getPosition().x - sprite.getPosition().x > -150 && I)
 	{
@@ -130,8 +135,6 @@ void NPC::initchat(sf::Sprite sprite, sf::RenderTarget& target)
 	{
 		target.draw(gui4);
 	}
-
-
 }
 
 

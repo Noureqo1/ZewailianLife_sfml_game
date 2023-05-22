@@ -217,9 +217,11 @@ void Game::render()
 
 		this->renderPlayer();
 
-		this->npc.render(*this->window);
+		this->npc.rendernpc(*this->window);
 
-		npc.rendernpc(*this->window);
+		npc.initIndooorschat(player.boyCharcter, *this->window);
+		npc.initIndooorschat(player.girlCharacter, *this->window);
+
 	}
 
 
@@ -259,6 +261,7 @@ void Game::initchat()
 	if (!chat.getechatisOver())
 	{
 		npc.initchat(player.boyCharcter, *window);
+		npc.initchat(player.girlCharacter, *window);
 	}
 
 	if (npc.getI())

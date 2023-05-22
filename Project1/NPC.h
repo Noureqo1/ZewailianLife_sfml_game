@@ -23,6 +23,7 @@ public:
 	void render(sf::RenderTarget& target);
 	void rendernpc(sf::RenderTarget& target);
 	void initchat(sf::Sprite sprite, sf::RenderTarget& target);
+	void initIndooorschat(sf::Sprite sprite, sf::RenderTarget& target);
 	void Iispressed();
 };
 
