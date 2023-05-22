@@ -102,6 +102,9 @@ void Game::updatePlayer()
 void Game::update()
 {
 
+	this->pollEvents();
+
+
 	this->setbage();
 	
 	menu.updateMenu();
@@ -210,11 +213,14 @@ void Game::render()
 
 	if (menu.getPage() == 7)
 	{
-		
+		indoor.render(*this->window);
 
+		this->renderPlayer();
+
+		npc.rendernpc(*this->window);
+	}
+		this->window->display();
 	
-
-	this->window->display();
 }
 
 void Game::updateDt()
@@ -223,6 +229,45 @@ void Game::updateDt()
 
 	this->dt = this->dtClock.restart().asSeconds();
 }
+
+void Game::setbage()
+{
+	if (map.gateposition(player.boyCharcter) && menu.getPage() == 5 || map.gateposition(player.girlCharacter) && menu.getPage() == 5)
+	{
+		player.setboyposition(Vector2f(400, 640));
+
+		menu.setPagenum(6);
+	}
+
+	if (map.enteranceposition(player.boyCharcter) && menu.getPage() == 6 && Keyboard::isKeyPressed(Keyboard::Enter)
+		|| map.enteranceposition(player.girlCharacter) && menu.getPage() == 6 && menu.getPage() == 6 && Keyboard::isKeyPressed(Keyboard::Enter))
+	{
+		player.setboyposition(Vector2f(400, 640));
+		menu.setPagenum(7);
+	}
+
+}
+
+void Game::initchat()
+{
+	this->npc.render(*this->window);
+
+	if (!chat.getechatisOver())
+	{
+		npc.initchat(player.boyCharcter, *window);
+	}
+
+	if (npc.getI())
+	{
+		this->chat.GatenpcChat(*window);
+
+		if (chat.FisPressed())
+		{
+			this->chat.GatenpcResponse1(*window);
+		}
+	}
+}
+
 
 void Game::updateView()
 {

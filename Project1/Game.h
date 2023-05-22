@@ -12,6 +12,9 @@
 #include "CutSene.h"
 #include "menu.h"
 #include "NPC.h"
+#include"Chat.h"
+#include"indoorsMap.h"
+#include"items.h"
 #include <string>
 
 
@@ -20,7 +23,7 @@ class Game
 private:
 
 	sf::View view;
-	
+
 	sf::Clock dtClock;
 	float dt;
 
@@ -30,10 +33,6 @@ private:
 	sf::RenderWindow* window;
 	sf::Event sfmlEvent;
 	sf::Vector2i mousepos;
-	
-	Chat chat;
-
-	items item;
 
 	string name;
 
@@ -46,6 +45,12 @@ private:
 	menu menu;
 
 	NPC npc;
+
+	Chat chat;
+
+	items item;
+
+	indoorsMap indoor;
 
 	void initVariables();
 	void initWindow();
@@ -64,6 +69,8 @@ public:
 	void pollEvents();
 	void initview(sf::RenderTarget& window);
 
+	void initchat();
+
 	void updateView();
 
 	void updatePlayer();
@@ -71,6 +78,8 @@ public:
 	void renderPlayer();
 
 	void updateDt();
+
+	void setbage();
 
 	void menuState();
 
