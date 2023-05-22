@@ -1,7 +1,6 @@
 #include"Game.h"
 
 
-
 void Game::initVariables()
 {
 	this->view = sf::View(sf::FloatRect(0, 0, 530, 420));
@@ -28,6 +27,7 @@ Game::Game()
 	this->initWindow();
 
 }
+
 
 Game::~Game()
 {

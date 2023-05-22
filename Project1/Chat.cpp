@@ -46,7 +46,7 @@ void Chat::movedown()
 	if (selected + 1 <= 4) {
 		drDoaaText[selected].setFillColor(Color::White);
 		selected++;
-		if (selected == 4) 
+		if (selected == 4)
 		{
 			selected = 1;
 		}
@@ -117,25 +117,25 @@ void Chat::DrdoaaChat(RenderWindow& window)
 	this->drDoaaText[0].setFont(font);
 	this->drDoaaText[0].setFillColor(Color::White);
 	this->drDoaaText[0].setString("hello my name is DrDoaa iam your csai151 instructor how can i help you? ");
-	this->drDoaaText[0].setCharacterSize(30);
+	this->drDoaaText[0].setCharacterSize(6);
 	this->drDoaaText[0].setPosition(Vector2f(293, 490));
 
 	this->drDoaaText[1].setFont(font);
 	this->drDoaaText[1].setFillColor(Color::Yellow);
 	this->drDoaaText[1].setString("i wanted to do my assignment");
-	this->drDoaaText[1].setCharacterSize(30);
+	this->drDoaaText[1].setCharacterSize(6);
 	this->drDoaaText[1].setPosition(Vector2f(293,520));
 
 	this->drDoaaText[2].setFont(font);
 	this->drDoaaText[2].setFillColor(Color::White);
 	this->drDoaaText[2].setString("i wanted to do my quiz");
-	this->drDoaaText[2].setCharacterSize(30);
+	this->drDoaaText[2].setCharacterSize(6);
 	this->drDoaaText[2].setPosition(Vector2f(293,540));
 
 	this->drDoaaText[3].setFont(font);
 	this->drDoaaText[3].setFillColor(Color::White);
 	this->drDoaaText[3].setString("nothing i will come back another time");
-	this->drDoaaText[3].setCharacterSize(30);
+	this->drDoaaText[3].setCharacterSize(6);
 	this->drDoaaText[3].setPosition(Vector2f(293,560));
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
@@ -174,8 +174,9 @@ void Chat::DrdoaaResponse1(RenderWindow& window)
 	this->drDoaaresponse1Text[0].setFont(font);
 	this->drDoaaresponse1Text[0].setFillColor(Color::White);
 	this->drDoaaresponse1Text[0].setString("if you want to do your assignment go find the assignment item in the map ");
-	this->drDoaaresponse1Text[0].setCharacterSize(30);
+	this->drDoaaresponse1Text[0].setCharacterSize(6);
 	this->drDoaaresponse1Text[0].setPosition(Vector2f(400, 640 / (10)));
+
 	window.draw(drDoaaresponse1Text[0]);
 
 }
@@ -186,7 +187,7 @@ void Chat::DrdoaaResponse2(RenderWindow& window)
 	this->drDoaaresponse2Text[0].setFont(font);
 	this->drDoaaresponse2Text[0].setFillColor(Color::White);
 	this->drDoaaresponse2Text[0].setString("if you want to do your quiz go find the quiz item in the map ");
-	this->drDoaaresponse2Text[0].setCharacterSize(30);
+	this->drDoaaresponse2Text[0].setCharacterSize(6);
 	this->drDoaaresponse2Text[0].setPosition(Vector2f(400, 640 / (10)));
 	window.draw(drDoaaresponse2Text[0]);
 }
@@ -207,25 +208,25 @@ void Chat::DrwalidChat(RenderWindow& window)
 	this->drwalidText[0].setFont(font);
 	this->drwalidText[0].setFillColor(Color::White);
 	this->drwalidText[0].setString("hello my name is DrWalid,iam your math105 instructor how can i help you?");
-	this->drwalidText[0].setCharacterSize(30);
+	this->drwalidText[0].setCharacterSize(6);
 	this->drwalidText[0].setPosition(Vector2f(400, 640 / (10)));
 
 	this->drwalidText[1].setFont(font);
 	this->drwalidText[1].setFillColor(Color::White);
 	this->drwalidText[1].setString("i wanted to do my assignment");
-	this->drwalidText[1].setCharacterSize(30);
+	this->drwalidText[1].setCharacterSize(6);
 	this->drwalidText[1].setPosition(Vector2f(400, 640 / (10)));
 
 	this->drwalidText[2].setFont(font);
 	this->drwalidText[2].setFillColor(Color::White);
 	this->drwalidText[2].setString("i wanted to do my quiz");
-	this->drwalidText[2].setCharacterSize(30);
+	this->drwalidText[2].setCharacterSize(6);
 	this->drwalidText[2].setPosition(Vector2f(400, 640 / (10)));
 
 	this->drwalidText[3].setFont(font);
 	this->drwalidText[3].setFillColor(Color::White);
 	this->drwalidText[3].setString("nothing i will come another time");
-	this->drwalidText[3].setCharacterSize(30);
+	this->drwalidText[3].setCharacterSize(6);
 	this->drwalidText[3].setPosition(Vector2f(400, 640 / (10)));
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
@@ -264,26 +265,51 @@ void Chat::AcademicNpcChat(RenderWindow& window)
 	this->AcademicNpcText[0].setFont(font);
 	this->AcademicNpcText[0].setFillColor(Color::White);
 	this->AcademicNpcText[0].setString("hello and welcome to academic building my name is elnaggar how can i help you?");
-	this->AcademicNpcText[0].setCharacterSize(30);
+	this->AcademicNpcText[0].setCharacterSize(6);
 	this->AcademicNpcText[0].setPosition(Vector2f(400, 640 / (10)));
 
 	this->AcademicNpcText[1].setFont(font);
 	this->AcademicNpcText[1].setFillColor(Color::White);
 	this->AcademicNpcText[1].setString("what are the items here?");
-	this->AcademicNpcText[1].setCharacterSize(30);
+	this->AcademicNpcText[1].setCharacterSize(6);
 	this->AcademicNpcText[1].setPosition(Vector2f(400, 640 / (10)));
 
 	this->AcademicNpcText[2].setFont(font);
 	this->AcademicNpcText[2].setFillColor(Color::White);
 	this->AcademicNpcText[2].setString("where are the instructors office");
-	this->AcademicNpcText[2].setCharacterSize(30);
+	this->AcademicNpcText[2].setCharacterSize(6);
 	this->AcademicNpcText[2].setPosition(Vector2f(400, 640 / (10)));
 
 	this->AcademicNpcText[3].setFont(font);
 	this->AcademicNpcText[3].setFillColor(Color::White);
 	this->AcademicNpcText[3].setString("i will be back later");
-	this->AcademicNpcText[3].setCharacterSize(30);
+	this->AcademicNpcText[3].setCharacterSize(6);
 	this->AcademicNpcText[3].setPosition(Vector2f(400, 640 / (10)));
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	{
+		moveup();
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		movedown();
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
+	{
+
+		if (pressed() == 1)
+		{
+			AcademicNpcResponse1(window);
+		}
+		else if (pressed() == 2)
+		{
+			AcademicNpcResponse2(window);
+		}
+		else if (pressed() == 3)
+		{
+
+		}
+	}
 
 	for (int i = 0; i < 4; i++) {
 		window.draw(AcademicNpcText[i]);
@@ -296,7 +322,7 @@ void Chat::AcademicNpcResponse1(RenderWindow&window)
 	this->AcademicNpcResponse1Text[0].setFont(font);
 	this->AcademicNpcResponse1Text[0].setFillColor(Color::White);
 	this->AcademicNpcResponse1Text[0].setString("in the academic building you can find the quizes items and outside you can find the assignments items");
-	this->AcademicNpcResponse1Text[0].setCharacterSize(30);
+	this->AcademicNpcResponse1Text[0].setCharacterSize(6);
 	this->AcademicNpcResponse1Text[0].setPosition(Vector2f(400, 640 / (10)));
 	window.draw(AcademicNpcResponse1Text[0]);
 }
@@ -307,7 +333,7 @@ void Chat::AcademicNpcResponse2(RenderWindow&window)
 	this->AcademicNpcResponse2Text[0].setFont(font);
 	this->AcademicNpcResponse2Text[0].setFillColor(Color::White);
 	this->AcademicNpcResponse2Text[0].setString("the room on your left is Drwalid's and on the right is Drdoaa's room ");
-	this->AcademicNpcResponse2Text[0].setCharacterSize(30);
+	this->AcademicNpcResponse2Text[0].setCharacterSize(6);
 	this->AcademicNpcResponse2Text[0].setPosition(Vector2f(400, 640 / (10)));
 	window.draw(AcademicNpcResponse1Text[0]);
 }
