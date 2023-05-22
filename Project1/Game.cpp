@@ -106,6 +106,7 @@ void Game::updatePlayer()
 
 void Game::update()
 {
+	//this->FisPressed();
 
 	this->pollEvents();
 	
@@ -181,14 +182,23 @@ void Game::render()
 
 		npc.initchat(player.boyCharcter, *window);
 
+		if (npc.getI()) 
+		{
+			this->chat.GatenpcChat(*window);
+
+			if (chat.FisPressed()) 
+			{
+				this->chat.GatenpcResponse1(*window);
+			}
+		}
+
 		this->intro.render(*this->window);
 	}
 
 
-	
-
 	this->window->display();
 }
+
 
 void Game::updateDt()
 {
@@ -226,7 +236,6 @@ void Game::menuState()
 	}
 	if (menu.getPage() == 4)
 	{
-		
-	}
-	
+
+	}	
 }

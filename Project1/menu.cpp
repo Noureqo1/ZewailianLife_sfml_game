@@ -8,8 +8,6 @@
 //page 4 = select character window
 //page 5 = cutscene window
 //page 6 = outside the academic window
-//page 7 = dr doaa office window
-//page 8 = dr walid office window
 
 
 void menu::initTexture()

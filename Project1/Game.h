@@ -12,6 +12,7 @@
 #include "CutSene.h"
 #include "menu.h"
 #include "NPC.h"
+#include"Chat.h"
 #include <string>
 
 
@@ -43,6 +44,8 @@ private:
 
 	NPC npc;
 
+	Chat chat;
+
 	void initVariables();
 	void initWindow();
 
@@ -73,5 +76,8 @@ public:
 	void update();
 
 	void render();
+
+
+	
 
 };
