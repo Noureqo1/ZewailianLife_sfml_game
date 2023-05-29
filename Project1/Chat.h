@@ -1,10 +1,19 @@
-
 #pragma once
 #include"Game.h"
 
 class Chat
 {
 private:
+
+	bool chatdoaaIsover;
+	bool chatwalidIsover;
+	bool chatnaggarIsover;
+	int doaaresp;
+	int wallidresp;
+	int naggarresp;
+	bool doaaAnswer;
+	bool walidAnswer;
+	bool naggarAnswer;
 	int times;
 	bool gatechatIsover;
 	bool f;
@@ -36,13 +45,7 @@ public:
 
 	Chat();
 
-	void chatSelection();
-
 	int pressed();
-
-	void moveup();
-
-	void movedown();
 
 	void GatenpcChat(RenderWindow& window);
 
@@ -54,19 +57,21 @@ public:
 
 	void DrdoaaResponse2(RenderWindow& window);
 
-	void DrdoaaResponse3(RenderWindow& window);
-
-	void DrdoaaResponse4(RenderWindow& window);
-
 	void DrwalidChat(RenderWindow& window);
-
-	void DrwalidResponse(RenderWindow& window);
 
 	void AcademicNpcChat(RenderWindow& window);
 
 	void AcademicNpcResponse1(RenderWindow& window);
 
 	void AcademicNpcResponse2(RenderWindow& window);
+
+	bool getdoaachatIsover();
+
+	bool getwalidchatIsover();
+
+	bool getnaggarchatIsover();
+
+	void initinputs();
 
 	bool FisPressed();
 

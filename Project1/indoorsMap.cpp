@@ -21,6 +21,7 @@ indoorsMap::indoorsMap()
 
 indoorsMap::~indoorsMap()
 {
+
 }
 
 void indoorsMap::render(sf::RenderTarget& target)
@@ -28,6 +29,3 @@ void indoorsMap::render(sf::RenderTarget& target)
 	target.draw(this->indoors);
 }
 
-void indoorsMap::updateBackgrowndBoundsCollision(sf::Sprite& sprite)
-{
-}

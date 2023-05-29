@@ -8,16 +8,21 @@ private:
     Texture idTexture;
     Sprite id;
 
-    bool drawId;
+    bool itemIspicked;
 
     void initTeaxture();
     void initSprites();
+
 
 public:
 
     items();
     ~items();
 
-    void renderItems(sf::Sprite sprite , sf::RenderTarget& target);
+    void updateItiem(sf::Sprite sprite);
+
+    bool getitemidpicked();
+
+    void renderItems(sf::RenderTarget& target);
 };
 

@@ -3,6 +3,11 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Audio.hpp>
+#pragma once
+#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
 #include<iostream>
 #include<ctime>
@@ -13,9 +18,13 @@
 #include "menu.h"
 #include "NPC.h"
 #include"Chat.h"
+#include "animation.h"
+#include "sound.h"
 #include"indoorsMap.h"
+#include "buttons.h"
 #include"items.h"
 #include <string>
+
 
 
 class Game
@@ -26,6 +35,11 @@ private:
 
 	sf::Clock dtClock;
 	float dt;
+
+	Texture idTexture;
+	Sprite id;
+
+	bool itemIspicked;
 
 	sf::Vector2f position;
 
@@ -38,6 +52,8 @@ private:
 
 	CutSene intro;
 
+    items item;
+
 	Map map;
 
 	Player player;
@@ -48,9 +64,14 @@ private:
 
 	Chat chat;
 
-	items item;
+	sound sound;
+
+	buttons button;
+	
 
 	indoorsMap indoor;
+
+	animation anime;
 
 	void initVariables();
 	void initWindow();
@@ -61,6 +82,7 @@ public:
 	~Game();
 
 	void Coutmousepos();
+
 
 	//Modifiers
 
@@ -85,6 +107,10 @@ public:
 
 	void update();
 
+	void indoorChat();
+
 	void render();
+
+	void renderitem();
 
 };

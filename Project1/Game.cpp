@@ -3,6 +3,18 @@
 
 void Game::initVariables()
 {
+
+	if (!this->idTexture.loadFromFile("assets/Itemes/id.png"))
+	{
+		std::cout << "ERROR::NPC::INITTEXTURE::Could not load texture file." << "\n";
+	}
+
+	id.setTexture(idTexture);
+	this->id.scale(2.0f, 2.0f);
+	this->id.setPosition(790, 500);
+
+	this->itemIspicked = false;
+
 	this->view = sf::View(sf::FloatRect(0, 0, 530, 420));
 	view.setViewport(sf::FloatRect(0, 0, 1.0f, 1.0f));
 	view.setCenter(215, 160);
@@ -83,38 +95,44 @@ void Game::initview(sf::RenderTarget& window)
 		view.setCenter(view.getCenter().x, window.getSize().y - view.getSize().y / 2);
 	}
 	window.setView(view);
-}	
+}
 
 void Game::updatePlayer()
 {
 
+	
+	
+
 	if (menu.getSpriteSlected())
 	{
 		player.updatePlayer(player.boyCharcter, this->window);
+		this->anime.UpdateAnimation(player.boyCharcter);
 	}
 	if (!menu.getSpriteSlected())
 	{
 		player.updatePlayer(player.girlCharacter, this->window);
+		this->anime.UpdateAnimation(player.girlCharacter);
 	}
 	intro.BusSene();
 }
 
 void Game::update()
 {
+    menuState();
 
 	this->pollEvents();
 
 
 	this->setbage();
-	
+
 	menu.updateMenu();
 
 	this->Coutmousepos();
 
-	menuState();
+	
 
 	menu.getmousepos(*window);
-	
+
 	menu.characterSelctionPage();
 
 	this->updateView();
@@ -128,13 +146,18 @@ void Game::update()
 			initview(*this->window);
 		}
 
+		item.renderItems(*window);
+
 		map.updateBackgrowndBoundsCollision(player.boyCharcter);
 		map.updateBackgrowndBoundsCollision(player.girlCharacter);
-		
+
 		intro.updateInput();
 
 		this->updatePlayer();
-		
+
+		npc.handleCollision(player.boyCharcter);
+		npc.handleCollision(player.girlCharacter);
+
 	}
 	if (menu.getPage() == 6)
 	{
@@ -145,7 +168,30 @@ void Game::update()
 	{
 		initview(*this->window);
 		this->updatePlayer();
+		npc.handleindoorCollision(player.boyCharcter);
+		npc.handleindoorCollision(player.girlCharacter);
 	}
+}
+
+void Game::indoorChat()
+{
+	if (!chat.getdoaachatIsover())
+	{
+		npc.initGUI3(player.boyCharcter, *this->window);
+		npc.initGUI3(player.girlCharacter, *this->window);
+
+
+
+
+		if (npc.getstartGUI3())
+		{
+			chat.DrdoaaChat(*window);
+		}
+	}
+	this->chat.DrdoaaResponse1(*window);
+	this->chat.DrdoaaResponse2(*window);
+
+
 }
 
 void Game::renderPlayer()
@@ -160,7 +206,7 @@ void Game::renderPlayer()
 		{
 			window->draw(player.girlCharacter);
 		}
-			
+
 	}
 }
 
@@ -175,8 +221,8 @@ void Game::render()
 	menu.drawBackground(*window);
 
 	menu.draw(*this->window);
-	
-	
+
+
 	menu.renderCarcterSlection(*window);
 
 	if (menu.getPage() == 5)
@@ -185,27 +231,34 @@ void Game::render()
 
 		this->renderPlayer();
 
-		item.renderItems(player.boyCharcter, *window);
-
-
 		
+
+		this->renderitem();
+
 		this->initchat();
 
-		if (npc.getI()) 
+		if (npc.getI())
 		{
 			this->chat.GatenpcChat(*window);
 
-			if (chat.FisPressed()) 
+			if (chat.FisPressed())
 			{
 				this->chat.GatenpcResponse1(*window);
 			}
 		}
 
 		this->intro.render(*this->window);
+		
+		
 	}
 
 	if (menu.getPage() == 6)
 	{
+		if (map.enteranceposition(player.boyCharcter) && menu.getPage() == 6 || map.enteranceposition(player.girlCharacter) && menu.getPage() == 6)
+		{
+			button.renderItems(*window);
+		}
+
 		map.renderoutdoors(*this->window);
 
 		this->renderPlayer();
@@ -218,21 +271,38 @@ void Game::render()
 		this->renderPlayer();
 
 		npc.rendernpc(*this->window);
+
+		indoorChat();
 	}
-		this->window->display();
-	
+	this->window->display();
+
+}
+
+void Game::renderitem()
+{
+
+	if (player.boyCharcter.getGlobalBounds().intersects(this->id.getGlobalBounds())|| player.girlCharacter.getGlobalBounds().intersects(this->id.getGlobalBounds()))
+	{
+		itemIspicked = true;
+	}
+
+	if (!itemIspicked)
+	{
+		this->window->draw(id);
+	}
+		
+
 }
 
 void Game::updateDt()
 {
-	/*Updates the dt variable with the time it takes to update and render one frame.*/
 
-	this->dt = this->dtClock.restart().asSeconds();
+		this->dt = this->dtClock.restart().asSeconds();
 }
 
 void Game::setbage()
 {
-	if (map.gateposition(player.boyCharcter) && menu.getPage() == 5 || map.gateposition(player.girlCharacter) && menu.getPage() == 5)
+	if (map.gateposition(player.boyCharcter) && menu.getPage() == 5 && itemIspicked || map.gateposition(player.girlCharacter) && menu.getPage() == 5 && itemIspicked)
 	{
 		player.setboyposition(Vector2f(400, 640));
 
@@ -240,7 +310,7 @@ void Game::setbage()
 	}
 
 	if (map.enteranceposition(player.boyCharcter) && menu.getPage() == 6 && Keyboard::isKeyPressed(Keyboard::Enter)
-		|| map.enteranceposition(player.girlCharacter) && menu.getPage() == 6 && menu.getPage() == 6 && Keyboard::isKeyPressed(Keyboard::Enter))
+		|| map.enteranceposition(player.girlCharacter) && menu.getPage() == 6 && Keyboard::isKeyPressed(Keyboard::Enter))
 	{
 		player.setboyposition(Vector2f(400, 640));
 		menu.setPagenum(7);
@@ -273,7 +343,7 @@ void Game::updateView()
 {
 	if (menu.getSpriteSlected())
 	{
-		view.setCenter(player.getBoyPosition().x+16, player.getBoyPosition().y+16);
+		view.setCenter(player.getBoyPosition().x + 16, player.getBoyPosition().y + 16);
 	}
 	if (!menu.getSpriteSlected())
 	{
@@ -283,12 +353,17 @@ void Game::updateView()
 
 void Game::menuState()
 {
+	if (menu.getPage() == 1)
+	{
+		sound.volume(*this->window);
 
-	if (menu.getPage() == 3) 
+		menu.playername(*this->window, name);
+	}
+	if (menu.getPage() == 3)
 	{
 		this->window->close();
 	}
-	if (menu.getPage() == 0) 
+	if (menu.getPage() == 0)
 	{
 		menu.playername(*this->window, name);
 	}
@@ -296,9 +371,5 @@ void Game::menuState()
 	{
 		menu.controls(*this->window);
 	}
-	if (menu.getPage() == 4)
-	{
-		
-	}
-	
+
 }

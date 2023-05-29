@@ -13,10 +13,11 @@ private:
 	void initBackground();
 
 public:
+
 	indoorsMap();
 	~indoorsMap();
 
 	void render(sf::RenderTarget& target);
-	void updateBackgrowndBoundsCollision(sf::Sprite& sprite);
+
 };
 

@@ -133,6 +133,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="animation.cpp" />
+    <ClCompile Include="buttons.cpp" />
     <ClCompile Include="Chat.cpp" />
     <ClCompile Include="CutSene.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -143,8 +145,11 @@
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="sound.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="animation.h" />
+    <ClInclude Include="buttons.h" />
     <ClInclude Include="Chat.h" />
     <ClInclude Include="CutSene.h" />
     <ClInclude Include="Game.h" />
@@ -154,6 +159,7 @@
     <ClInclude Include="menu.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="sound.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
