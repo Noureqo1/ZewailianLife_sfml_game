@@ -249,7 +249,6 @@ void Game::render()
 
 		this->intro.render(*this->window);
 		
-		
 	}
 
 	if (menu.getPage() == 6)
@@ -274,6 +273,7 @@ void Game::render()
 
 		indoorChat();
 	}
+
 	this->window->display();
 
 }
@@ -357,7 +357,7 @@ void Game::menuState()
 	{
 		sound.volume(*this->window);
 
-		menu.playername(*this->window, name);
+		menu.playername(*this->window);
 	}
 	if (menu.getPage() == 3)
 	{
@@ -365,7 +365,7 @@ void Game::menuState()
 	}
 	if (menu.getPage() == 0)
 	{
-		menu.playername(*this->window, name);
+		menu.playername(*this->window);
 	}
 	if (menu.getPage() == 2)
 	{

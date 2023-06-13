@@ -11,6 +11,8 @@ private:
 	Sprite bg;
 	Texture menuBackground;
 
+	string name;
+
 	int selected, recselected;
 	Font font;
 	int page = 100;
@@ -26,6 +28,7 @@ private:
 	float rectHeight;
 
 	Text SelectCharacterText;
+	Text introtext[3];
 
 	int timer, animationTimer;
 
@@ -67,7 +70,7 @@ public:
 	void initVariables();
 	void setDelay();
 	void updateMenu();
-	void playername(RenderWindow& window, string& name);
+	void playername(RenderWindow& window);
 	void draw(RenderWindow& window);
 	void moveup();
 
@@ -80,6 +83,8 @@ public:
 	void drawBackground(RenderWindow& window);
 
 	void initBackground();
+
+	void intro(RenderWindow& window);
 
 	void movedown();
 

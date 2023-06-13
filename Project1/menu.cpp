@@ -136,16 +136,12 @@ void menu::characterSelctionPage()
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && girlCharacter.getGlobalBounds().contains(mouseposition))
 		{
 
-			
-
 			cracterSelected = true;
 			
 		}
 
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && boyCharcter.getGlobalBounds().contains(mouseposition))
 		{
-			
-			cout << "lol";
 
 			this->spriteSlected = true;
 
@@ -155,7 +151,7 @@ void menu::characterSelctionPage()
 
 		if (cracterSelected)
 		{
-			page = 5;
+			page = 8;
 		}
 
 
@@ -292,7 +288,7 @@ void menu::updateMenu()
 
 
 
-void menu::playername(RenderWindow& window, string& name)
+void menu::playername(RenderWindow& window)
 {
 	if (!name.empty()) 
 	{
@@ -348,7 +344,7 @@ void menu::draw(RenderWindow& window)
 	for (int i = 0; i < 4; i++) {
 		window.draw(mainmenu[i]);
 	}
-	
+	this->intro(window);
 }
 void menu::moveup()
 {
@@ -458,8 +454,46 @@ void menu::drawBackground(RenderWindow& window)
 
 	}
 
-	void menu::initBackground()
+void menu::initBackground()
+{
+	menuBackground.loadFromFile("assets/backgrownd.png");
+	bg.setTexture(menuBackground);
+}
+
+void menu::intro(RenderWindow& window)
+{
+	if (page == 8)
 	{
-		menuBackground.loadFromFile("assets/backgrownd.png");
-		bg.setTexture(menuBackground);
+		window.clear();
+
+		introtext[0].setFont(font);
+		introtext[0].setFillColor(Color::Green);
+		introtext[0].setString("hi " + name + " wellcome to zewalian life");
+		introtext[0].setCharacterSize(40);
+		introtext[0].setPosition(Vector2f(50, 640 / (15)));
+
+
+		introtext[1].setFont(font);
+		introtext[1].setFillColor(Color::Blue);
+		introtext[1].setString("are you ready for your acadimic year ,\nexperiance the life of students ,\ncollect items and chat with \nthe caracrers");
+		introtext[1].setCharacterSize(40);
+		introtext[1].setPosition(Vector2f(50, 640 / (15) + 150));
+
+		introtext[2].setFont(font);
+		introtext[2].setFillColor(Color::Red);
+		introtext[2].setString("have fun and good luck with your \nacadimic year\n            press enter to continue");
+		introtext[2].setCharacterSize(40);
+		introtext[2].setPosition(Vector2f(50, 640 / (15) + 400));
+
+		if (Keyboard::isKeyPressed(Keyboard::Enter))
+		{
+			page = 5;
+		}
+
+
+		drawBackground(window);
+		window.draw(introtext[0]);
+		window.draw(introtext[1]);
+		window.draw(introtext[2]);
 	}
+}
