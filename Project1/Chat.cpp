@@ -123,45 +123,21 @@ void Chat::DrdoaaChat(RenderWindow& window)
 	this->drDoaaText[1].setFont(font);
 	this->drDoaaText[1].setFillColor(Color::Yellow);
 	this->drDoaaText[1].setString("i wanted to do my assignment");
-	this->drDoaaText[1].setCharacterSize(6);
-	this->drDoaaText[1].setPosition(Vector2f(293, 520));
+	this->drDoaaText[1].setCharacterSize(30);
+	this->drDoaaText[1].setPosition(Vector2f(400, 640 / (10)));
 
 	this->drDoaaText[2].setFont(font);
 	this->drDoaaText[2].setFillColor(Color::White);
 	this->drDoaaText[2].setString("i wanted to do my quiz");
-	this->drDoaaText[2].setCharacterSize(6);
-	this->drDoaaText[2].setPosition(Vector2f(293, 540));
+	this->drDoaaText[2].setCharacterSize(30);
+	this->drDoaaText[2].setPosition(Vector2f(400, 640 / (10)));
 
 	this->drDoaaText[3].setFont(font);
 	this->drDoaaText[3].setFillColor(Color::White);
 	this->drDoaaText[3].setString("nothing i will come back another time");
-	this->drDoaaText[3].setCharacterSize(6);
-	this->drDoaaText[3].setPosition(Vector2f(293, 560));
+	this->drDoaaText[3].setCharacterSize(30);
+	this->drDoaaText[3].setPosition(Vector2f(400, 640 / (10)));
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-	{
-		moveup();
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-	{
-		movedown();
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
-	{
-		if (pressed() == 1)
-		{
-			DrdoaaResponse1(window);
-		}
-		else if (pressed() == 2)
-		{
-			DrdoaaResponse2(window);
-		}
-		else if (pressed() == 3)
-		{
-
-
-		}
-	}
 	for (int i = 0; i < 4; i++) {
 		window.draw(drDoaaText[i]);
 	}
@@ -229,32 +205,7 @@ void Chat::DrwalidChat(RenderWindow& window)
 	this->drwalidText[3].setCharacterSize(6);
 	this->drwalidText[3].setPosition(Vector2f(400, 640 / (10)));
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-	{
-		moveup();
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-	{
-		movedown();
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
-	{
-
-		if (pressed() == 1)
-		{
-			DrdoaaResponse1(window);
-		}
-		else if (pressed() == 2)
-		{
-			DrdoaaResponse2(window);
-		}
-		else if (pressed() == 3)
-		{
-
-		}
-	}
-	for (int i = 0; i < 4; i++)
-	{
+	for (int i = 0; i < 4; i++) {
 		window.draw(drwalidText[i]);
 	}
 }

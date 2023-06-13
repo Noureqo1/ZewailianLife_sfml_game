@@ -24,6 +24,7 @@ Game::Game()
 	this->initWindow();
 }
 
+
 Game::~Game()
 {
 	delete this->window;
@@ -193,25 +194,9 @@ void Game::render()
 		{
 			this->chat.GatenpcChat(*window);
 
-			if (chat.FisPressed()) 
-			{
-				this->chat.GatenpcResponse1(*window);
-			}
-		}
-
 		this->intro.render(*this->window);
 	}
 
-	if (menu.getPage() == 6)
-	{
-		map.renderoutdoors(*this->window);
-
-		this->renderPlayer();
-	}
-
-	if (menu.getPage() == 7)
-	{
-		indoor.render(*this->window);
 
 		this->renderPlayer();
 
