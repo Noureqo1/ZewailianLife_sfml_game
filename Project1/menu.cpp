@@ -28,7 +28,7 @@ void menu::initSprite()
 	this->boyCharcter.setTextureRect(sf::IntRect(0, 0, 16, 17));
 
 	this->boyCharcter.scale(10.0f, 10.0f);
-	this->boyCharcter.setPosition(300,200);
+	this->boyCharcter.setPosition(180,350);
 
 
 
@@ -36,7 +36,7 @@ void menu::initSprite()
 	this->girlCharacter.setTextureRect(sf::IntRect(0, 0, 16, 17));
 
 	this->girlCharacter.scale(10.0f, 10.0f);
-	this->girlCharacter.setPosition(600, 200);
+	this->girlCharacter.setPosition(630, 350);
 
 }
 
@@ -63,7 +63,7 @@ void menu::renderCarcterSlection(sf::RenderTarget& target)
 	{	
 		target.clear();
 
-		target.draw(this->bg);
+		target.draw(this->ChracterSelectionbg);
 
 		target.draw(this->boyCharcter);
 
@@ -128,8 +128,8 @@ void menu::characterSelctionPage()
 		
 		SelectCharacterText.setFont(font);
 		SelectCharacterText.setString("select your character");
-		SelectCharacterText.setCharacterSize(70);
-		SelectCharacterText.setPosition(10, 100);
+		SelectCharacterText.setCharacterSize(50);
+		SelectCharacterText.setPosition(150, 100);
 		SelectCharacterText.setFillColor(Color::Green);
 		
 		
@@ -188,14 +188,36 @@ void menu::movedown()
 {
 	if (selected + 1 <= 4) {
 		mainmenu[selected].setFillColor(Color::White);
+		curentpos = mainmenu[selected].getPosition();
+		mainmenu[selected].setPosition(curentpos + Vector2f(50, 0));
 		selected++;
 		if (selected == 4) {
 			selected = 0;
 
 		}
 		mainmenu[selected].setFillColor(Color::Yellow);
+		curentpos = mainmenu[selected].getPosition();
+		mainmenu[selected].setPosition(curentpos- Vector2f(50, 0));
 	}
 }
+
+void menu::moveup()
+{
+	if (selected - 1 >= -1) {
+		mainmenu[selected].setFillColor(Color::White);
+		curentpos = mainmenu[selected].getPosition();
+		mainmenu[selected].setPosition(curentpos + Vector2f(50, 0));
+		selected--;
+		if (selected == -1) {
+			selected = 3;
+		}
+		mainmenu[selected].setFillColor(Color::Yellow);
+		curentpos = mainmenu[selected].getPosition();
+		mainmenu[selected].setPosition(curentpos - Vector2f(50, 0));
+	}
+}
+
+
 void menu::set_selected(int n)
 {
 	selected = n;
@@ -205,10 +227,6 @@ bool menu::getSpriteSlected()
 {
 	return spriteSlected;
 }
-
-
-
-
 
 int menu::getPage()
 {
@@ -225,44 +243,47 @@ void menu::initVariables()
 	delay = sf::seconds(0.3f);
 	inputEnabled = true;
 	this->selected = 0;
-	 
+
+	this->page = 100;
+
 	timer = 0;
 	animationTimer = 15;
 
 	this->y = 0;
-	
+
 	rectHeight = 50.0f;
 	rectWidth = 30.0f;
 	recselected = 0;
 	cracterSelected = false;
-	
+
 	spriteSlected = false;
 
 	font.loadFromFile("assets/fonts/Barlock.otf");
 	mainmenu[0].setFont(font);
 	mainmenu[0].setFillColor(Color::Yellow);
 	mainmenu[0].setString("play");
-	mainmenu[0].setCharacterSize(90);
-	mainmenu[0].setPosition(Vector2f(300, 640 / (10)));
+	mainmenu[0].setCharacterSize(60);
+	mainmenu[0].setPosition(Vector2f(300, 300));
 
 	mainmenu[1].setFont(font);
 	mainmenu[1].setFillColor(Color::White);
 	mainmenu[1].setString("volume");
-	mainmenu[1].setCharacterSize(90);
-	mainmenu[1].setPosition(Vector2f(300, 640 / (10) + 100));
+	mainmenu[1].setCharacterSize(60);
+	mainmenu[1].setPosition(Vector2f(350, 300 + 50));
 
 	mainmenu[2].setFont(font);
 	mainmenu[2].setFillColor(Color::White);
 	mainmenu[2].setString("controls");
-	mainmenu[2].setCharacterSize(90);
-	mainmenu[2].setPosition(Vector2f(300, 640 / (10) + 200));
+	mainmenu[2].setCharacterSize(60);
+	mainmenu[2].setPosition(Vector2f(350, 300 + 100));
 
 	mainmenu[3].setFont(font);
 	mainmenu[3].setFillColor(Color::White);
 	mainmenu[3].setString("exit");
-	mainmenu[3].setCharacterSize(90);
-	mainmenu[3].setPosition(Vector2f(300, 640 / (10) + 300));
-	
+	mainmenu[3].setCharacterSize(60);
+	mainmenu[3].setPosition(Vector2f(350, 300 + 150));
+
+
 }
 
 void menu::setDelay()
@@ -301,10 +322,10 @@ void menu::playername(RenderWindow& window)
 	HeadText.setFont(font);
 	NameText.setFont(font);
 	HeadText.setString("enter your name");
-	HeadText.setCharacterSize(70);
-	NameText.setCharacterSize(70);
-	HeadText.setPosition(10, 10);
-	NameText.setPosition(10, 100);
+	HeadText.setCharacterSize(40);
+	NameText.setCharacterSize(40);
+	HeadText.setPosition(300, 250);
+	NameText.setPosition(300, 300);
 	HeadText.setFillColor(Color::Green);
 	NameText.setFillColor(Color::White);
 
@@ -331,7 +352,7 @@ void menu::playername(RenderWindow& window)
 		}
 		NameText.setString(name);
 		window.clear();
-		drawBackground(window);
+		drawNameBackground(window);
 		window.draw(HeadText);
 		window.draw(NameText);
 		window.display();
@@ -346,18 +367,6 @@ void menu::draw(RenderWindow& window)
 	}
 	this->intro(window);
 }
-void menu::moveup()
-{
-	if (selected - 1 >= -1) {
-		mainmenu[selected].setFillColor(Color::White);
-		selected--;
-		if (selected == -1) {
-			selected = 3;
-		}
-		mainmenu[selected].setFillColor(Color::Yellow);
-	}
-}
-
 
 void menu::controls(RenderWindow& window)
 {
@@ -424,7 +433,7 @@ void menu::controls(RenderWindow& window)
 		window.clear();
 
 		
-		drawBackground(window);
+		drawPlainBackground(window);
 
 		window.draw(controlstext[1]);
 		window.draw(controlstext[2]);
@@ -448,16 +457,40 @@ sf::Vector2f menu::getmousepos(RenderWindow& window)
 }
 
 void menu::drawBackground(RenderWindow& window)
-	{
-
+{
 		window.draw(bg);
+}
 
-	}
+void menu::drawNameBackground(RenderWindow& window)
+{
+
+	window.draw(Namebg);
+
+}
+
+void menu::drawPlainBackground(RenderWindow& window)
+{
+
+	window.draw(Plain);
+
+}
 
 void menu::initBackground()
 {
-	menuBackground.loadFromFile("assets/backgrownd.png");
+	menuBackground.loadFromFile("assets/1.png");
 	bg.setTexture(menuBackground);
+
+	NamebgTexture.loadFromFile("assets/2.png");
+	Namebg.setTexture(NamebgTexture);
+
+	ChracterSelectionbgTexture.loadFromFile("assets/3.png");
+	ChracterSelectionbg.setTexture(ChracterSelectionbgTexture);
+
+	IntrobgTexture.loadFromFile("assets/4.png");
+	Introbg.setTexture(IntrobgTexture);
+
+	PlainTexture.loadFromFile("assets/Plain.png");
+	Plain.setTexture(PlainTexture);
 }
 
 void menu::intro(RenderWindow& window)
@@ -468,32 +501,42 @@ void menu::intro(RenderWindow& window)
 
 		introtext[0].setFont(font);
 		introtext[0].setFillColor(Color::Green);
-		introtext[0].setString("hi " + name + " wellcome to zewalian life");
+		introtext[0].setString("hi " + name);
 		introtext[0].setCharacterSize(40);
-		introtext[0].setPosition(Vector2f(50, 640 / (15)));
+		introtext[0].setPosition(Vector2f(400,50));
 
 
-		introtext[1].setFont(font);
-		introtext[1].setFillColor(Color::Blue);
-		introtext[1].setString("are you ready for your acadimic year ,\nexperiance the life of students ,\ncollect items and chat with \nthe caracrers");
-		introtext[1].setCharacterSize(40);
-		introtext[1].setPosition(Vector2f(50, 640 / (15) + 150));
+		//introtext[1].setFont(font);
+		//introtext[1].setFillColor(Color::Blue);
+		//introtext[1].setString("wellcame to zewailian life are you ready for your acadimic year ,\nexperiance the life of students ,\ncollect items and chat with \nthe caracrers");
+		//introtext[1].setCharacterSize(40);
+		//introtext[1].setPosition(Vector2f(50, 640 / (15) + 150));
 
-		introtext[2].setFont(font);
-		introtext[2].setFillColor(Color::Red);
-		introtext[2].setString("have fun and good luck with your \nacadimic year\n            press enter to continue");
-		introtext[2].setCharacterSize(40);
-		introtext[2].setPosition(Vector2f(50, 640 / (15) + 400));
+		//introtext[2].setFont(font);
+		//introtext[2].setFillColor(Color::Red);
+		//introtext[2].setString("have fun and good luck with your \nacadimic year\n            press enter to continue");
+		//introtext[2].setCharacterSize(40);
+		//introtext[2].setPosition(Vector2f(50, 640 / (15) + 400));
+
+		//if (Keyboard::isKeyPressed(Keyboard::Enter))
+		//{
+		//	page = 5;
+		//}
+
+
+		//drawBackground(window);
+		//window.draw(introtext[0]);
+		//window.draw(introtext[1]);
+		//window.draw(introtext[2]);
+
 
 		if (Keyboard::isKeyPressed(Keyboard::Enter))
 		{
 			page = 5;
 		}
 
-
-		drawBackground(window);
+		window.draw(Introbg);
 		window.draw(introtext[0]);
-		window.draw(introtext[1]);
-		window.draw(introtext[2]);
+
 	}
 }

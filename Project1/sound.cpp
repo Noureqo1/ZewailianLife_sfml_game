@@ -11,16 +11,22 @@ sound::sound()
 
 	font.loadFromFile("assets/fonts/Barlock.otf");
 	volumeText[0].setFont(font);
-	volumeText[0].setString("press down to mute");
-	volumeText[0].setCharacterSize(60);
+	volumeText[0].setString("press M to mute");
+	volumeText[0].setCharacterSize(40);
 	volumeText[0].setPosition(75, 150);
 	volumeText[0].setFillColor(Color::Red);
 
 	volumeText[1].setFont(font);
-	volumeText[1].setString("press up to unmute");
-	volumeText[1].setCharacterSize(60);
-	volumeText[1].setPosition(75, 350);
+	volumeText[1].setString("press up to Raise the Volume");
+	volumeText[1].setCharacterSize(40);
+	volumeText[1].setPosition(75, 300);
 	volumeText[1].setFillColor(Color::Green);
+
+	volumeText[2].setFont(font);
+	volumeText[2].setString("press up to lower the Volume");
+	volumeText[2].setCharacterSize(40);
+	volumeText[2].setPosition(75, 450);
+	volumeText[2].setFillColor(Color::Green);
 }
 
 void sound::volume(RenderWindow& window)
@@ -31,13 +37,17 @@ void sound::volume(RenderWindow& window)
 			if (event.type == Event::Closed()) {
 				window.close();
 			}
-			if (Keyboard::isKeyPressed(Keyboard::Down))
+			if (Keyboard::isKeyPressed(Keyboard::M))
 			{
 				music.setVolume(0);
 			}
 			if (Keyboard::isKeyPressed(Keyboard::Up))
 			{
-				music.setVolume(100);
+				music.setVolume(music.getVolume() + 10);
+			}
+			if (Keyboard::isKeyPressed(Keyboard::Down))
+			{
+				music.setVolume(music.getVolume() - 10);
 			}
 
 			if (Keyboard::isKeyPressed(Keyboard::Escape)) {
@@ -49,10 +59,11 @@ void sound::volume(RenderWindow& window)
 
 
 
-		menu.drawBackground(window);
+		menu.drawPlainBackground(window);
 
 		window.draw(volumeText[0]);
 		window.draw(volumeText[1]);
+		window.draw(volumeText[2]);
 
 		window.display();
 	}

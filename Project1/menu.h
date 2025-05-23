@@ -11,11 +11,23 @@ private:
 	Sprite bg;
 	Texture menuBackground;
 
+	Sprite Namebg;
+	Texture NamebgTexture;
+
+	Sprite ChracterSelectionbg;
+	Texture ChracterSelectionbgTexture;
+
+	Sprite Introbg;
+	Texture IntrobgTexture;
+
+	Sprite Plain;
+	Texture PlainTexture;
+
 	string name;
 
 	int selected, recselected;
 	Font font;
-	int page = 100;
+	int page;
 	sf::Clock clock;
 	sf::Time delay;
 	bool inputEnabled;
@@ -43,6 +55,9 @@ private:
 	Event event;
 
 	sf::Vector2f mouseposition;
+
+
+	sf::Vector2f curentpos;
 
 	int y;
 
@@ -81,6 +96,8 @@ public:
 	sf::Vector2f getmousepos(RenderWindow& window);
 
 	void drawBackground(RenderWindow& window);
+	void drawNameBackground(RenderWindow& window);
+	void drawPlainBackground(RenderWindow& window);
 
 	void initBackground();
 

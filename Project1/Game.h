@@ -5,20 +5,21 @@
 #include <SFML/Window.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
-#include<iostream>
-#include<ctime>
-#include<vector>
+#include <iostream>
+#include <ctime>
+#include <vector>
 #include "map.h"
-#include"player.h"
+#include "player.h"
 #include "CutSene.h"
 #include "menu.h"
 #include "NPC.h"
-#include"Chat.h"
+#include "Chat.h"
 #include "animation.h"
 #include "sound.h"
-#include"indoorsMap.h"
+#include "indoorsMap.h"
 #include "buttons.h"
-#include"items.h"
+#include "items.h"
+#include "Tests.h"
 #include <string>
 
 
@@ -63,11 +64,12 @@ private:
 	sound sound;
 
 	buttons button;
-	
 
 	indoorsMap indoor;
 
 	animation anime;
+
+	Tests test;
 
 	void initVariables();
 	void initWindow();
@@ -108,5 +110,7 @@ public:
 	void render();
 
 	void renderitem();
+
+	void tests();
 
 };

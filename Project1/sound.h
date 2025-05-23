@@ -13,7 +13,7 @@ private:
 
     Font font;
 
-    Text volumeText[2];
+    Text volumeText[3];
 
     menu menu;
 

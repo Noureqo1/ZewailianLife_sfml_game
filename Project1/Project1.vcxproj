@@ -136,6 +136,7 @@
     <ClCompile Include="animation.cpp" />
     <ClCompile Include="buttons.cpp" />
     <ClCompile Include="Chat.cpp" />
+    <ClCompile Include="ChatUI.cpp" />
     <ClCompile Include="CutSene.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="indoorsMap.cpp" />
@@ -146,11 +147,13 @@
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="sound.cpp" />
+    <ClCompile Include="Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animation.h" />
     <ClInclude Include="buttons.h" />
     <ClInclude Include="Chat.h" />
+    <ClInclude Include="ChatUI.h" />
     <ClInclude Include="CutSene.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="indoorsMap.h" />
@@ -160,6 +163,7 @@
     <ClInclude Include="NPC.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="sound.h" />
+    <ClInclude Include="Tests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
