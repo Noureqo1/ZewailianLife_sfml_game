@@ -5,7 +5,7 @@ An immersive 2D simulation game built with C++ and SFML (Simple and Fast Multime
 ## Overview
 
 - Game menu
-![Overview](docs/overview/menu.png)
+![Overview](Project1/docs/overview/menu.png)
 - Enter player name
 ![Overview](path/to/name.png)
 - Select your character
