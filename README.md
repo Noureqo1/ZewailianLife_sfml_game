@@ -2,6 +2,20 @@
 
 An immersive 2D simulation game built with C++ and SFML (Simple and Fast Multimedia Library). Experience a virtual world where you can interact with characters, explore environments, and complete various objectives.
 
+## Overview
+
+- Game menu
+![Overview](docs/overview/menu.png)
+- Enter player name
+![Overview](path/to/name.png)
+- Select your character
+![Overview](path/to/characters.png)
+- Game intro
+![Overview](path/to/intro.png)
+- Enjoy the game
+![Overview](path/to/game.png)
+
+
 ## Features
 
 ### Main Menu
@@ -64,7 +78,7 @@ An immersive 2D simulation game built with C++ and SFML (Simple and Fast Multime
 
 | Asset Type | Preview | Description |
 |------------|---------|-------------|
-| Player Sprite | ![Player](path/to/player.png) | Main character sprite |
+| Player Sprite | ![Player1](path/to/player.png)![Player2](path/to/player.png) | Main characters sprite |
 | Map Tileset | ![Tileset](path/to/tileset.png) | Game world tiles |
 | UI Elements | ![UI](path/to/ui.png) | Menu and HUD elements |
 | Items | ![Items](path/to/items.png) | Collectible items |
