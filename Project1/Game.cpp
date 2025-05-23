@@ -99,10 +99,6 @@ void Game::initview(sf::RenderTarget& window)
 
 void Game::updatePlayer()
 {
-
-	
-	
-
 	if (menu.getSpriteSlected())
 	{
 		player.updatePlayer(player.boyCharcter, this->window);
@@ -122,14 +118,11 @@ void Game::update()
 
 	this->pollEvents();
 
-
 	this->setbage();
 
 	menu.updateMenu();
 
 	this->Coutmousepos();
-
-	
 
 	menu.getmousepos(*window);
 
@@ -191,7 +184,6 @@ void Game::indoorChat()
 	this->chat.DrdoaaResponse1(*window);
 	this->chat.DrdoaaResponse2(*window);
 
-
 }
 
 void Game::renderPlayer()
@@ -209,7 +201,6 @@ void Game::renderPlayer()
 
 	}
 }
-
 
 void Game::render()
 {
@@ -260,6 +251,8 @@ void Game::render()
 
 		map.renderoutdoors(*this->window);
 
+		test.TestWindoewTransation(*this->window);
+
 		this->renderPlayer();
 	}
 
@@ -294,10 +287,16 @@ void Game::renderitem()
 
 }
 
+void Game::tests()
+{
+	test.TestWindoewTransation(*this->window);
+
+	this->window->display();
+}
+
 void Game::updateDt()
 {
-
-		this->dt = this->dtClock.restart().asSeconds();
+	this->dt = this->dtClock.restart().asSeconds();
 }
 
 void Game::setbage()

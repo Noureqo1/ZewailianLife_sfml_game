@@ -78,8 +78,6 @@ void NPC::initSprites()
 	this->gui4.setScale(3, 3);
 }
 
-
-
 NPC::NPC()
 {
 	I = false;
@@ -132,7 +130,6 @@ void NPC::initGUI2(sf::Sprite sprite, sf::RenderTarget& target)
 	{
 		target.draw(gui2);
 	}
-
 }
 
 void NPC::initGUI3(sf::Sprite sprite, sf::RenderTarget& target)
@@ -163,11 +160,7 @@ void NPC::initchat(sf::Sprite sprite, sf::RenderTarget& target)
 	{
 		target.draw(gui);
 	}
-
-
 }
-
-
 
 void NPC::Iispressed(sf::Sprite sprite)
 {
@@ -203,7 +196,6 @@ void NPC::IofGUI4ispressed(sf::Sprite sprite)
 
 void NPC::handleCollision(sf::Sprite& sprite1)
 {
-
 	// Check if the global bounds of the sprites intersect
 	if (sprite1.getGlobalBounds().intersects(npc1.getGlobalBounds()))
 	{
@@ -227,7 +219,6 @@ void NPC::handleCollision(sf::Sprite& sprite1)
 			sprite1.setPosition(sprite1.getPosition().x, npc1.getGlobalBounds().top + npc1.getGlobalBounds().height);
 		}
 	}
-
 }
 
 void NPC::handleindoorCollision(sf::Sprite& sprite1)
@@ -304,5 +295,3 @@ void NPC::handleindoorCollision(sf::Sprite& sprite1)
 		}
 	}
 }
-
-

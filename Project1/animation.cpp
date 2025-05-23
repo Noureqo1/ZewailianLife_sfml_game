@@ -53,7 +53,6 @@ void animation::UpdateAnimation(sf::Sprite& sprite)
 		timer += 1;
 		if (timer >= animationTimer)
 		{
-
 			sprite.setTextureRect(sf::IntRect(0, y * 17, 16, 17));
 			y++;
 			y = y % 3;

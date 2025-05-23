@@ -1,6 +1,6 @@
 #include"Game.h"
 
-//using namespace sf;
+using namespace sf;
 
 int main()
 {
@@ -13,7 +13,8 @@ int main()
 
 	//Game loop
 	while (game.running())
-	{
+	{		
+		//game.tests();
 		game.update();
 		game.render();
 	}
