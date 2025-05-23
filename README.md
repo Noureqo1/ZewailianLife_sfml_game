@@ -78,7 +78,7 @@ An immersive 2D simulation game built with C++ and SFML (Simple and Fast Multime
 
 | Asset Type | Preview | Description |
 |------------|---------|-------------|
-| Player Sprite | ![Player1](Project1/docs/overview/player1.png)![Player2](Project1/docs/overview/player2.png) | Main characters sprite |
+| Player Sprite | ![Player1](Project1/docs/overview/player1.png =250x)![Player2](Project1/docs/overview/player2.png) | Main characters sprite |
 | Map Tileset | ![Tileset](Project1/docs/overview/Plain.png) | Background |
 | UI Elements | ![UI](Project1/assets/GUI/GUI.png) | Menu and HUD elements |
 | Items | ![Items](Project1/assets/Itemes/id.png) | Collectible items |
