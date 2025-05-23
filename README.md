@@ -7,13 +7,13 @@ An immersive 2D simulation game built with C++ and SFML (Simple and Fast Multime
 - Game menu
 ![Overview](Project1/docs/overview/menu.png)
 - Enter player name
-![Overview](path/to/name.png)
+![Overview](Project1/docs/overview/name.png)
 - Select your character
-![Overview](path/to/characters.png)
+![Overview](Project1/docs/overview/characters.png)
 - Game intro
-![Overview](path/to/intro.png)
+![Overview](Project1/docs/overview/intro.png)
 - Enjoy the game
-![Overview](path/to/game.png)
+![Overview](Project1/docs/overview/game.png)
 
 
 ## Features
@@ -78,10 +78,10 @@ An immersive 2D simulation game built with C++ and SFML (Simple and Fast Multime
 
 | Asset Type | Preview | Description |
 |------------|---------|-------------|
-| Player Sprite | ![Player1](path/to/player.png)![Player2](path/to/player.png) | Main characters sprite |
-| Map Tileset | ![Tileset](path/to/tileset.png) | Game world tiles |
-| UI Elements | ![UI](path/to/ui.png) | Menu and HUD elements |
-| Items | ![Items](path/to/items.png) | Collectible items |
+| Player Sprite | ![Player1](Project1/docs/overview/player1.png)![Player2](Project1/docs/overview/player2.png) | Main characters sprite |
+| Map Tileset | ![Tileset](Project1/docs/overview/Plain.png) | Background |
+| UI Elements | ![UI](Project1/assets/GUI/GUI.png) | Menu and HUD elements |
+| Items | ![Items](Project1/assets/Itemes/id.png) | Collectible items |
 
 ## Getting Started
 
