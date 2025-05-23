@@ -4,6 +4,8 @@ An immersive 2D simulation game built with C++ and SFML (Simple and Fast Multime
 
 ## Overview
 
+- Linked in post.
+Post:[post](https://www.linkedin.com/posts/noureldinabdelrazek_i-will-be-posting-my-best-project-in-the-activity-7211499773961383936-_JWd?utm_source=share&utm_medium=member_desktop&rcm=ACoAAERiVwMB65-IqkN3IM2hqzM1DVx7Q-JBaNo).
 - Game menu
 ![Overview](Project1/docs/overview/menu.png)
 - Enter player name
