@@ -76,12 +76,109 @@ An immersive 2D simulation game built with C++ and SFML (Simple and Fast Multime
 
 ## Game Assets
 
-| Asset Type | Preview | Description |
-|------------|---------|-------------|
-| Player Sprite | <imgsrc="Project1/docs/overview/player1.png"width="150"/><imgsrc="Project1/docs/overview/player2.png"width="150"/> [Player2](Project1/docs/overview/player2.png) | Main characters sprite |
-| Map Tileset | ![Tileset](Project1/docs/overview/Plain.png) | Background |
-| UI Elements | ![UI](Project1/assets/GUI/GUI.png) | Menu and HUD elements |
-| Items | ![Items](Project1/assets/Itemes/id.png) | Collectible items |
+|
+ Asset Type 
+|
+ Preview 
+|
+ Description 
+|
+|
+------------
+|
+---------
+|
+-------------
+|
+|
+ Player Sprite 
+|
+<
+img
+src
+=
+"
+Project1/docs/overview/player1.png
+"
+width
+=
+"
+150
+"
+/>
+<
+img
+src
+=
+"
+Project1/docs/overview/player2.png
+"
+width
+=
+"
+150
+"
+/>
+|
+ Main characters sprite 
+|
+|
+ Map Tileset 
+|
+<
+img
+src
+=
+"
+Project1/docs/overview/Plain.png
+"
+width
+=
+"
+300
+"
+/>
+|
+ Background 
+|
+|
+ UI Elements 
+|
+<
+img
+src
+=
+"
+Project1/assets/GUI/GUI.png
+"
+width
+=
+"
+300
+"
+/>
+|
+ Menu and HUD elements 
+|
+|
+ Items 
+|
+<
+img
+src
+=
+"
+Project1/assets/Itemes/id.png
+"
+width
+=
+"
+150
+"
+/>
+|
+ Collectible items 
+|
 
 ## Getting Started
 
